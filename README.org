@@ -87,15 +87,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Docker Cleanup
 | Name                           | Summary                                                  |
 |--------------------------------+----------------------------------------------------------|
-| Delete all containers          | [[https://github.com/dennyzhang/cheatsheet-docker-A4/blob/master/delete-all-containers.sh#L13][delete-all-containers.sh]]                                 |
 | Remove unused docker images    | [[https://github.com/dennyzhang/cheatsheet-docker-A4/blob/master/delete-unused-images.sh#L13][delete-unused-images.sh]]                                  |
+| Delete all containers          | [[https://github.com/dennyzhang/cheatsheet-docker-A4/blob/master/delete-all-containers.sh#L13][delete-all-containers.sh]]                                 |
+| Remove exited containers       | =docker rm $(docker ps --filter status=exited -qa)=      |
 | Docker prune images            | =docker image prune -f=                                  |
 | Docker prune volumes           | =docker volume prune -f=                                 |
 | Remove the specified image     | =docker rmi <imagename>=                                 |
 | Remove all docker images       | =docker rmi $(docker images -q)=                         |
 | Remove orphaned docker volumes | =docker volume rm $(docker volume ls -qf dangling=true)= |
 | Remove dead containers         | =docker rm $(docker ps --filter status=dead -qa)=        |
-| Remove exited containers       | =docker rm $(docker ps --filter status=exited -qa)=      |
 ** Dockerfile
 | Name                             | Summary                                                                          |
 |----------------------------------+----------------------------------------------------------------------------------|
